@@ -2,7 +2,7 @@
 ft_array is a simple library to simplify array managment in C.
 
 # Installation
-Clone this repo at the root of your project. Do a make to create libarray.a that you can include in your project. Finally, include "ft_array.h" in your project.
+Clone this repo at the root of your project. Do a **make** to create **libarray.a** that you can include in your project. Finally, include **ft_array.h** in your project.
 
 # Usage
 Using an array is easy as this :
