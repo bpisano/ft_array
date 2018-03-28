@@ -6,17 +6,18 @@
 #    By: bpisano <marvin@le-101.fr>                 +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2018/03/28 14:15:58 by bpisano      #+#   ##    ##    #+#        #
-#    Updated: 2018/03/28 14:26:28 by bpisano     ###    #+. /#+    ###.fr      #
+#    Updated: 2018/03/28 17:18:20 by bpisano     ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
 
 NAME = libarray.a
 
-SRC = sources/ar_init.c		\
-	  sources/ar_count.c	\
-	  sources/ar_cpy.c		\
-	  sources/ar_append.c	\
+SRC = sources/ar_init.c			\
+	  sources/ar_count.c		\
+	  sources/ar_cpy.c			\
+	  sources/ar_append.c		\
+	  sources/ar_remove_last.c	\
 
 OBJECTS = $(SRC:.c=.o)
 
