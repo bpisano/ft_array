@@ -46,7 +46,7 @@ free(my_array);
 # Why is this usefull
 A common case where array can be usefull is parsing. For example, fdf parsing can simply look like this :
 ```c
-int		parse(char *file_name, t_array *file)
+int	parse(char *file_name, t_array *file)
 {
 	int	fd;
 	char	*line;
