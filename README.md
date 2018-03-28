@@ -21,7 +21,7 @@ The second one is that you have to cast the content of the array you fetch. For 
 ```c
 (char *)my_array[0]
 ```
-For exeample, in this case, accessing the first character of the first string in your array will look like this :
+For example, in this case, accessing the first character of the first string in your array will look like this :
 ```c
 t_array   my_array;
 
