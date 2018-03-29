@@ -6,7 +6,7 @@
 #    By: bpisano <marvin@le-101.fr>                 +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2018/03/28 14:15:58 by bpisano      #+#   ##    ##    #+#        #
-#    Updated: 2018/03/28 17:34:20 by bpisano     ###    #+. /#+    ###.fr      #
+#    Updated: 2018/03/29 15:33:55 by bpisano     ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
@@ -15,7 +15,6 @@ NAME = libarray.a
 
 SRC = ar_init.c			\
 	  ar_count.c		\
-	  ar_cpy.c			\
 	  ar_append.c		\
 	  ar_remove_last.c	\
 
