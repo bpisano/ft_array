@@ -1,29 +1,39 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_array.h                                       .::    .:/ .      .::   */
+/*   ar_remove_at.c                                   .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: bpisano <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/03/28 14:26:57 by bpisano      #+#   ##    ##    #+#       */
-/*   Updated: 2018/04/23 19:41:18 by bpisano     ###    #+. /#+    ###.fr     */
+/*   Created: 2018/04/23 19:14:47 by bpisano      #+#   ##    ##    #+#       */
+/*   Updated: 2018/04/23 19:38:42 by bpisano     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#ifndef FT_ARRAY_H
-# define FT_ARRAY_H
+#include "ft_array.h"
+#include <stdio.h>
 
-# include <stdlib.h>
+int		ar_remove_at(t_array *array, size_t n)
+{
+	int		i;
+	int		j;
+	int		count;
+	t_array	new;
 
-typedef void **	t_array;
-
-int				ar_init(t_array *array, size_t size);
-int				ar_count(const t_array array);
-int				ar_append(t_array *array, void *value);
-int				ar_remove_at(t_array *array, size_t n);
-int				ar_remove_first(t_array *array);
-int				ar_remove_last(t_array *array);
-t_array			*ar_cpy(t_array *dst, const t_array *src);
-
-#endif
+	count = ar_count(*array);
+	if (!(ar_init(&new, count - 1)))
+		return (0);
+	i = -1;
+	j = -1;
+	while ((*array)[++i])
+	{
+		if (i == (int)n)
+			continue ;
+		new[++j] = (*array)[i];
+	}
+	new[j + 1] = NULL;
+	free(*array);
+	*array = new;
+	return (1);
+}
