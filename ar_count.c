@@ -6,7 +6,7 @@
 /*   By: bpisano <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/03/28 14:19:51 by bpisano      #+#   ##    ##    #+#       */
-/*   Updated: 2018/04/24 14:41:45 by bpisano     ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/04/25 15:39:09 by bpisano     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -18,7 +18,7 @@ size_t	ar_count(t_array array)
 	size_t	i;
 
 	i = 0;
-	while (array[i++])
-		;
+	while (array[i])
+		i++;
 	return (i);
 }
