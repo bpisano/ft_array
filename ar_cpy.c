@@ -6,14 +6,14 @@
 /*   By: bpisano <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/04/23 19:03:21 by bpisano      #+#   ##    ##    #+#       */
-/*   Updated: 2018/04/23 19:04:20 by bpisano     ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/04/25 14:23:55 by bpisano     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "ft_array.h"
 
-t_array *ar_cpy(t_array *dst, const t_array *src)
+t_array	*ar_cpy(t_array *dst, const t_array *src)
 {
 	int		i;
 
