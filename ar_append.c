@@ -6,7 +6,7 @@
 /*   By: bpisano <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/03/28 14:20:27 by bpisano      #+#   ##    ##    #+#       */
-/*   Updated: 2018/04/23 19:14:15 by bpisano     ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/04/25 15:09:17 by bpisano     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -14,10 +14,10 @@
 #include "ft_array.h"
 
 int		ar_append(t_array *array, void *value)
-{
-	t_array		new;
-	int			count;
+{	
 	int			i;
+	int			count;
+	t_array		new;
 
 	count = ar_count(*array);
 	if (!ar_init(&new, count + 1))
