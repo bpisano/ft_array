@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ar_append.c                                      .::    .:/ .      .::   */
+/*   ar_init_values.c                                 .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: bpisano <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/03/28 14:20:27 by bpisano      #+#   ##    ##    #+#       */
-/*   Updated: 2018/04/26 16:28:04 by bpisano     ###    #+. /#+    ###.fr     */
+/*   Created: 2018/04/26 15:45:48 by bpisano      #+#   ##    ##    #+#       */
+/*   Updated: 2018/04/26 15:57:38 by bpisano     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "ft_array.h"
 
-int		ar_append(t_array *array, ...)
+int		ar_init_values(t_array *array, size_t size, ...)
 {
-	int			i;
-	int			count;
-	va_list		params;
-	t_array		new;
+	int		i;
+	va_list	params;
 
-	count = ar_count(*array);
-	if (!ar_init(&new, count + 1))
+	if (!ar_init(array, 0))
 		return (0);
 	i = -1;
-	va_start(params, array);
-	while (++i < count)
-		new[i] = (*array)[i];
-	new[i] = va_arg(params, void *);
-	new[i + 1] = NULL;
-	free(*array);
-	*array = new;
+	va_start(params, size);
+	while (++i < (int)size)
+		if (!ar_append(array, va_arg(params, void *)))
+		{
+			free(array);
+			va_end(params);
+			return (0);
+		}
+	va_end(params);
 	return (1);
 }

@@ -1,35 +1,23 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ar_append.c                                      .::    .:/ .      .::   */
+/*   ar_print.c                                       .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: bpisano <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/03/28 14:20:27 by bpisano      #+#   ##    ##    #+#       */
-/*   Updated: 2018/04/26 16:28:04 by bpisano     ###    #+. /#+    ###.fr     */
+/*   Created: 2018/04/26 16:01:06 by bpisano      #+#   ##    ##    #+#       */
+/*   Updated: 2018/04/26 16:54:13 by bpisano     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "ft_array.h"
 
-int		ar_append(t_array *array, ...)
+void	ar_print(t_array array, char *format)
 {
-	int			i;
-	int			count;
-	va_list		params;
-	t_array		new;
+	int		i;
 
-	count = ar_count(*array);
-	if (!ar_init(&new, count + 1))
-		return (0);
 	i = -1;
-	va_start(params, array);
-	while (++i < count)
-		new[i] = (*array)[i];
-	new[i] = va_arg(params, void *);
-	new[i + 1] = NULL;
-	free(*array);
-	*array = new;
-	return (1);
+	while (array[++i])
+		printf(format, array[i]);
 }

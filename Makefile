@@ -6,24 +6,30 @@
 #    By: bpisano <marvin@le-101.fr>                 +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2018/03/28 14:15:58 by bpisano      #+#   ##    ##    #+#        #
-#    Updated: 2018/04/23 19:41:58 by bpisano     ###    #+. /#+    ###.fr      #
+#    Updated: 2018/04/26 16:53:45 by bpisano     ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
 
 NAME = libarray.a
 
-SRC = ar_init.c			\
-	  ar_count.c		\
-	  ar_append.c		\
-	  ar_cpy.c			\
-	  ar_remove_at.c	\
-	  ar_remove_first.c	\
-	  ar_remove_last.c	\
+SRC = ar_init.c				\
+	  ar_init_values.c		\
+	  ar_count.c			\
+	  ar_cpy.c				\
+	  ar_append.c			\
+	  ar_append_values.c	\
+	  ar_remove_at.c		\
+	  ar_remove_first.c		\
+	  ar_remove_last.c		\
+	  ar_joined.c			\
+	  ar_print.c			\
 
 OBJECTS = $(SRC:.c=.o)
 
-HEADS = ./
+PRINTF = ./libftprintf.a
+
+HEADS = ./					\
 
 FLAGS = -Wall -Werror -Wextra
 

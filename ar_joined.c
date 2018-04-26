@@ -1,35 +1,38 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ar_append.c                                      .::    .:/ .      .::   */
+/*   ar_joined.c                                      .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: bpisano <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/03/28 14:20:27 by bpisano      #+#   ##    ##    #+#       */
-/*   Updated: 2018/04/26 16:28:04 by bpisano     ###    #+. /#+    ###.fr     */
+/*   Created: 2018/04/26 15:31:44 by bpisano      #+#   ##    ##    #+#       */
+/*   Updated: 2018/04/26 15:37:31 by bpisano     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "ft_array.h"
 
-int		ar_append(t_array *array, ...)
+t_array	ar_joined(t_array a1, t_array a2)
 {
-	int			i;
-	int			count;
-	va_list		params;
-	t_array		new;
+	int		i;
+	t_array	join;
 
-	count = ar_count(*array);
-	if (!ar_init(&new, count + 1))
-		return (0);
 	i = -1;
-	va_start(params, array);
-	while (++i < count)
-		new[i] = (*array)[i];
-	new[i] = va_arg(params, void *);
-	new[i + 1] = NULL;
-	free(*array);
-	*array = new;
-	return (1);
+	if (!ar_init(&join, 0))
+		return (NULL);
+	while (a1[++i])
+		if (!ar_append(&join, a1[i]))
+		{
+			free(join);
+			return (NULL);
+		}
+	i = -1;
+	while (a2[++i])
+		if (!ar_append(&join, a2[i]))
+		{
+			free(join);
+			return (NULL);
+		}
+	return (join);
 }
